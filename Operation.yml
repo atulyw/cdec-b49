@@ -1,0 +1,133 @@
+Admission:
+  - Admission Checklist(Individual Student)Monthly:
+    CDEC-AI:
+    - Course Assignment
+    - Add to WhatsApp Community
+    - Assigning Student to Batch
+    - Admission Form Fill-up Hard Copy
+    - Signed from Student
+    - One-Drive Upload
+    - Entry in Admission Sheet
+    - Enrollment in LMS(Fill Form)
+    - Enrollment in ERP
+
+    X-DSAAI:
+    - Course Assignment
+    - Add to WhatsApp Community
+    - Assigning Student to Batch
+    - Admission Form Fill-up Hard Copy
+    - Signed from Student
+    - One-Drive Upload
+    - Entry in Admission Sheet
+    - Enrollment in LMS(Fill Form)
+    - Enrollment in ERP
+
+      
+Collection:
+Batch Planning:
+  - Common
+    - Lab Availability and Lab Slots and allocation
+  - CDEC-AI
+    - Upcoming Batches
+    - On-Going Batches
+    - Trainer Availability and Trainer Slots
+    - No of conversions and Admission Counts 
+
+  - X-DSAAI
+    - Upcoming Batches
+    - On-Going Batches
+    - Trainer Availability and Trainer Slots
+    - No of conversions and Admission Counts 
+    
+Infra-Ops:
+  - Electricity Bill
+  - Water Bill
+  - Internet Bill
+  - Infra Issues
+  - Infra cleaning
+  - Washroom Cleaning
+  - Stationaries
+  - Cleaning Material Availability
+  - Technical Assests (Like Laptop, Mobile, TV, AC)
+  - Monthly Maintance
+  - Rent and Maintance Request to Finance team
+  - Issues Raised Any
+
+Trainer_Management:
+  - Trainer Availability and Trainer Slots
+  - Trainer Leaves 
+  - Trainer In-time and Out-time
+  - Trainer Performance and Feedback
+  - Trainer Batch Allignment and Upcoming Batch Planning
+  - Session cancelled and Leaves 
+  - Trainer Feedback and Performance
+Complimentary-Sessions:
+  - CDEC-AI
+    - Azure Session
+    - Prompt AI Session
+    - GCP Session
+    - Python Session
+      - for above session trainers and schedule and enrolled students make sure students has to complete the pending fees
+  - X-DSAAI
+    - R programming Session
+    - Prompting and AI Session
+      - for above session trainers and schedule and enrolled students make sure students has to complete the pending fees
+    
+Placement:
+  - Placement Batch Enrollment (first check the fees completed or not)
+  - Student Placed or not tracking
+  - Placement issues and follow-up
+
+
+
+Hiring:
+  - Kothrud: 
+    - SBDE
+    - BDE(JR)
+    - 2
+
+  - Wakad: 
+    - BDE
+
+  - Kharadi:
+    - BDE
+
+  - Chakan:
+    - Sr. BDE
+
+  - Amaravati:
+    - BDE
+
+  - Pune:
+    - Sales Manager   
+
+
+
+Nagpur:
+  X-DSAAI: 40% Admssions
+  CDEC-AI: 60% Admission
+  Total Target: 50
+Kothrud:
+  X-DSAAI: 40% Admssions
+  CDEC-AI: 60% Admission
+  Total Target: 50
+
+Wakad:
+  X-DSAAI: 40% Admssions
+  CDEC-AI: 60% Admission
+ Total Target: 40
+Kharadi:
+  X-DSAAI: 40% Admssions
+  CDEC-AI: 60% Admission
+  Total Target: 30
+Chakan:
+    CDEC Only Total Target:  15
+Indore:
+  CDEC ONLY Total Target: 20
+Amravati:
+   CDEC ONLY Total Target: 20
+Online:
+  X-DSAAI: 40% Admssions
+  CDEC-AI: 60% Admission
+  Total Target: 50
+
