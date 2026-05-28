@@ -91,10 +91,10 @@ resource "aws_subnet" "public" {
   tags = merge(
     local.base_tags,
     {
-      Name                                    = "${local.name_prefix}-public-${each.key}"
-      Tier                                    = "public"
-      "kubernetes.io/role/elb"                = "1"
-      (local.eks_cluster_tag_key)             = "shared"
+      Name                        = "${local.name_prefix}-public-${each.key}"
+      Tier                        = "public"
+      "kubernetes.io/role/elb"    = "1"
+      (local.eks_cluster_tag_key) = "shared"
     }
   )
 }
@@ -114,10 +114,10 @@ resource "aws_subnet" "private" {
   tags = merge(
     local.base_tags,
     {
-      Name                                    = "${local.name_prefix}-private-${each.key}"
-      Tier                                    = "private"
-      "kubernetes.io/role/internal-elb"       = "1"
-      (local.eks_cluster_tag_key)             = "shared"
+      Name                              = "${local.name_prefix}-private-${each.key}"
+      Tier                              = "private"
+      "kubernetes.io/role/internal-elb" = "1"
+      (local.eks_cluster_tag_key)       = "shared"
     }
   )
 }
@@ -198,7 +198,7 @@ resource "aws_route_table" "private" {
   vpc_id = aws_vpc.this.id
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block     = "0.0.0.0/0"
     nat_gateway_id = var.single_nat_gateway ? aws_nat_gateway.this[local.first_az].id : aws_nat_gateway.this[each.key].id
   }
 
@@ -213,6 +213,6 @@ resource "aws_route_table" "private" {
 resource "aws_route_table_association" "private" {
   for_each = aws_subnet.private
 
-  subnet_id = each.value.id
+  subnet_id      = each.value.id
   route_table_id = var.single_nat_gateway ? aws_route_table.private["default"].id : aws_route_table.private[each.key].id
 }

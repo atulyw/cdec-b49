@@ -19,6 +19,7 @@ terraform {
 
 provider "aws" {
   region = var.aws_region
+  # profile = "terraform-sessions"
 
   # Provider default_tags — merged onto supported AWS resources automatically
   default_tags {

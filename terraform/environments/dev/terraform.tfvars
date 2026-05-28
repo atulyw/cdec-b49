@@ -12,7 +12,7 @@ vpc_cidr = "10.10.0.0/16"
 public_subnet_cidrs  = ["10.10.1.0/24", "10.10.2.0/24"]
 private_subnet_cidrs = ["10.10.10.0/24", "10.10.20.0/24"]
 
-availability_zones = ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
+availability_zones = ["eu-west-1a", "eu-west-1b"]
 
 # Cost: single NAT (~$32/month + data transfer) vs NAT per AZ
 single_nat_gateway = true
@@ -26,6 +26,6 @@ min_size            = 1
 max_size            = 3
 disk_size           = 50
 
-cluster_endpoint_public_access  = true
-cluster_endpoint_private_access = true
+cluster_endpoint_public_access       = true
+cluster_endpoint_private_access      = true
 cluster_endpoint_public_access_cidrs = ["0.0.0.0/0"]

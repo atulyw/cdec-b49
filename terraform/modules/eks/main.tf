@@ -22,11 +22,16 @@ locals {
   # Cluster ENIs must span multiple AZs; include public subnets when provided
   cluster_subnet_ids = distinct(concat(var.private_subnet_ids, var.public_subnet_ids))
 
-  # Explicit version wins; otherwise use the default (latest stable) in this region
-  cluster_version = coalesce(var.kubernetes_version, data.aws_eks_cluster_versions.available.default_version)
+  # Explicit version wins; otherwise use the EKS default Kubernetes version in this region
+  cluster_version = coalesce(
+    var.kubernetes_version,
+    one([for v in data.aws_eks_cluster_versions.available.cluster_versions : v.cluster_version if v.default_version])
+  )
 }
 
-data "aws_eks_cluster_versions" "available" {}
+data "aws_eks_cluster_versions" "available" {
+  default_only = true
+}
 
 # -----------------------------------------------------------------------------
 # CloudWatch Logs — control plane logs (api, audit, authenticator, etc.)
