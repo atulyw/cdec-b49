@@ -2,6 +2,13 @@ pipeline {
   agent {
     label 'terraform'
   }
+  parameters {
+    choice(
+      name: 'ENVIRONMENT',
+      choices: ['dev', 'test', 'prod'],
+      description: 'Terraform environment folder under terraform/environments/'
+    )
+  }
 
   options {
     disableConcurrentBuilds()
@@ -9,7 +16,7 @@ pipeline {
   }
 
   environment {
-    TF_DIR = 'terraform/environments/dev'
+    TF_DIR = "terraform/environments/${params.ENVIRONMENT}"
   }
 
   stages {
@@ -67,7 +74,7 @@ pipeline {
 
     stage('Manual Approval') {
       steps {
-        input message: 'Review the Terraform Plan log above. Apply to DEV?', ok: 'Apply'
+        input message: "Review the Terraform Plan log above. Apply to ${params.ENVIRONMENT}?", ok: 'Apply'
       }
     }
 
@@ -89,8 +96,8 @@ pipeline {
 
   post {
     success {
-      echo 'SUCCESS: DEV infrastructure deployed from branch terraform-v2.'
-      echo 'Next: aws eks update-kubeconfig --region ap-south-1 --name cdec-dev-eks'
+      echo "SUCCESS: ${params.ENVIRONMENT} infrastructure deployed from branch terraform-v2."
+      echo "Next: aws eks update-kubeconfig --region ap-south-1 --name cdec-${params.ENVIRONMENT}-eks"
     }
     failure {
       echo 'FAILURE: Pipeline failed. Check the failed stage log.'
